@@ -5,12 +5,15 @@ from tkinter import ttk
 from tkinter import *
 import table as tb
 import calendarbuilder as cb
-import os,sys,queue,threading
+import os,sys,queue,threading,platform
 from rssfeed import rssfeed
 from search import searchbox
 from marketsummary import marketsummary
 root=Tk()
-root.attributes('-zoomed', True)
+if platform.system()=="Linux":
+    root.attributes('-zoomed', True)
+elif platform.system()=="Windows":
+    root.state('zoomed')
 root.title("Currencyops")
 root.tk.call("source", sys.path[0]+"/azure.tcl")
 root.tk.call("set_theme", "dark")
