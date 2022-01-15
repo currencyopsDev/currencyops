@@ -8,6 +8,7 @@ import calendarbuilder as cb
 import os,sys,queue,threading
 from rssfeed import rssfeed
 from search import searchbox
+from marketsummary import marketsummary
 root=Tk()
 root.attributes('-zoomed', True)
 root.title("Currencyops")
@@ -52,6 +53,9 @@ worker.start()
 switch =ttk.Checkbutton(homepage, text='Switch Theme', style='Switch.TCheckbutton', command=change_theme)
 switch.pack(side=TOP,anchor=NE)
 scrollframe=cb.calendarBuilder(calendar)
+separator =ttk.Separator(homepage, orient='horizontal').pack(fill=X)
+marketsummary=marketsummary(homepage,["^IXIC","^DJI","AAPL","BTC-USD","GC=F","JPY=X","NFLX"])
+separator =ttk.Separator(homepage, orient='horizontal').pack(fill=X)
 searchbox=searchbox(homepage)
 feeds=rssfeed(homepage)
 tabControl.pack(expand=1,fill="both")

@@ -14,9 +14,10 @@ class rssfeed():
         webbrowser.open(feed[1])
     def maketable(self,rootframe,feeds):
         root=rootframe
-        main_frame = Frame(root,bd=1,relief="ridge")
-        main_frame.pack(fill=BOTH,side=RIGHT,)
+        main_frame = Frame(root,highlightbackground="black",highlightthickness="1")
+        main_frame.pack(fill=BOTH,side=RIGHT)
         Label(main_frame,text="NEWS",justify="center").pack(fill=X,side=TOP,anchor=NW)
+        ttk.Separator(main_frame).pack(fill=X,side=TOP)
         my_canvas=Canvas(main_frame)
         my_canvas.pack(side=LEFT,fill=BOTH)
         my_scrollbar = ttk.Scrollbar(main_frame, orient=VERTICAL, command=my_canvas.yview)
