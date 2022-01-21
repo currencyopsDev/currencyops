@@ -57,7 +57,7 @@ switch =ttk.Checkbutton(homepage, text='Switch Theme', style='Switch.TCheckbutto
 switch.pack(side=TOP,anchor=NE)
 scrollframe=cb.calendarBuilder(calendar)
 separator =ttk.Separator(homepage, orient='horizontal').pack(fill=X)
-marketsummary=marketsummary(homepage,["^IXIC","^DJI","AAPL","BTC-USD","GC=F","JPY=X","NFLX"])
+marketsummary=marketsummary(homepage,["^IXIC","^DJI","AAPL","BTC-USD","GC=F","NFLX"])
 separator =ttk.Separator(homepage, orient='horizontal').pack(fill=X)
 searchbox=searchbox(homepage)
 feeds=rssfeed(homepage)
