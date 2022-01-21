@@ -6,27 +6,22 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 import plotly.graph_objs as go
-
 class searchbox():
-   
+    def search(self,event):
+        #msg.showinfo("Info","Clicked to : "+event.widget.get())
+        self.ShowGraph(event.widget.get())
     def clearout(self,event):
         event.widget.delete("0",END)
-
-   
-
-    def __init__(self, rootframe):
-        self.area=Frame(rootframe)
-        searchbox=ttk.Entry(textvariable = self.area)
+    def __init__(self,rootframe):
+        area=Frame(rootframe)
+        searchbox=ttk.Entry(area)
         searchbox.insert(0, 'Enter an asset to view...')
-        searchbox.bind('<Return>', self.ShowGraph)
-        searchbox.bind('<FocusIn>', self.clearout) 
+        searchbox.bind('<Return>', self.search)
+        searchbox.bind('<FocusIn>', self.clearout)
         searchbox.place(anchor="center",relx=.3, rely=.5,width=300,relheight=0.06, relwidth=0.2)
-        self.area.pack(fill=BOTH,side=LEFT,expand=True)
-        
-    
-    def ShowGraph(self, rootframe):
-        
-        choice = str(self.getEntry())
+        area.pack(fill=BOTH,side=LEFT,expand=True)
+    def ShowGraph(self, ticker):
+        choice = ticker
         choice = choice.upper()
         data = yf.download(tickers=choice, period='5y', interval='1d')
         fig = go.Figure()
@@ -45,7 +40,3 @@ class searchbox():
             )
             )
         fig.show()
-
-
-
-#show_graph = searchbox.ShowGraph

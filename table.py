@@ -8,11 +8,13 @@ import time
 import yfinance as yf
 import threading,queue
 from tkinter import messagebox as msg
+from graphbrowser import get_closing_prices
 class tableBuilder():
     q=queue.Queue()
     status=""
     def print(self,parityname):
-        msg.showwarning("Warning","Clicked to "+parityname)
+        #msg.showwarning("Warning","Clicked to "+parityname)
+        get_closing_prices(parityname)
     def buildTable(self,rootframe,parities):
         root=rootframe
         for widget in root.winfo_children(): # remove loading label
