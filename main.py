@@ -7,7 +7,6 @@ import table as tb
 import calendarbuilder as cb
 import os,sys,queue,threading,platform
 from rssfeed import rssfeed
-#from currencyconverter import RealTimeCurrencyConverter, App
 from search import searchbox
 from marketsummary import marketsummary
 root=Tk()
@@ -24,10 +23,8 @@ exchange=ttk.Frame(tabControl)
 crypto=ttk.Frame(tabControl)
 stocks=ttk.Frame(tabControl)
 calendar=ttk.Frame(tabControl)
-converter = ttk.Frame(tabControl)
 tabControl.add(homepage,text="Home Page")
 tabControl.add(exchange,text="Exchange Rates")
-#tabControl.add(converter, text="Currency Exchange")
 tabControl.add(crypto,text="Cryptocurrencies")
 tabControl.add(stocks,text="Stocks")
 tabControl.add(calendar,text="Economic Calendar")
@@ -62,8 +59,7 @@ scrollframe=cb.calendarBuilder(calendar)
 separator =ttk.Separator(homepage, orient='horizontal').pack(fill=X)
 marketsummary=marketsummary(homepage,["^IXIC","^DJI","AAPL","BTC-USD","GC=F","JPY=X","NFLX"])
 separator =ttk.Separator(homepage, orient='horizontal').pack(fill=X)
-searchbox=searchbox(homepage) 
-#converter = App(converter)
+searchbox=searchbox(homepage)
 feeds=rssfeed(homepage)
 tabControl.pack(expand=1,fill="both")
 root.mainloop()
