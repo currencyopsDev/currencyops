@@ -9,6 +9,7 @@ import os,sys,queue,threading,platform
 from rssfeed import rssfeed
 from search import searchbox
 from marketsummary import marketsummary
+from currencyconverter import openConverter
 root=Tk()
 if platform.system()=="Linux":
     root.attributes('-zoomed', True)
@@ -53,8 +54,12 @@ def change_theme():
         theme="dark"
 worker = threading.Thread(target=tableloader, daemon=True)
 worker.start()
-switch =ttk.Checkbutton(homepage, text='Switch Theme', style='Switch.TCheckbutton', command=change_theme)
-switch.pack(side=TOP,anchor=NE)
+optionfield=Frame(homepage)
+currencyconverter =Button(optionfield, text='Currency Converter', command=openConverter,height=1,relief=GROOVE,borderwidth=2)
+currencyconverter.pack(side=LEFT,pady=(0, 5))
+switch =ttk.Checkbutton(optionfield, text='Switch Theme', style='Switch.TCheckbutton', command=change_theme)
+switch.pack(side=RIGHT)
+optionfield.pack(side=TOP,fill=X)
 scrollframe=cb.calendarBuilder(calendar)
 separator =ttk.Separator(homepage, orient='horizontal').pack(fill=X)
 marketsummary=marketsummary(homepage,["^IXIC","^DJI","AAPL","BTC-USD","GC=F","NFLX"])
