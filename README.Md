@@ -11,4 +11,11 @@ Currencyops is a monitoring application that allows you to monitor currency exch
 
 ## Screenshots
 
-![First Screenshot](https://github.com/currencyopsDev/currencyops/blob/main/screenshot0.png)
+![Image](https://github.com/currencyopsDev/currencyops/blob/main/screenshots/0-homepage.png)
+![Image](https://github.com/currencyopsDev/currencyops/blob/main/screenshots/1-search.png)
+![Image](https://github.com/currencyopsDev/currencyops/blob/main/screenshots/2-currencyconverter.png)
+![Image](https://github.com/currencyopsDev/currencyops/blob/main/screenshots/3-exchangerates.png)
+![Image](https://github.com/currencyopsDev/currencyops/blob/main/screenshots/4-graphicalview.png)
+![Image](https://github.com/currencyopsDev/currencyops/blob/main/screenshots/5-cryptocurrencies.png)
+![Image](https://github.com/currencyopsDev/currencyops/blob/main/screenshots/6-stocks.png)
+![Image](https://github.com/currencyopsDev/currencyops/blob/main/screenshots/7-economiccalendar.png)
