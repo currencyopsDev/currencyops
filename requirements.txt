@@ -3,3 +3,8 @@ numpy
 pandas
 yfinance
 feedparser
+plotly
+matplotlib
+requests
+seaborn
+mplcursors
